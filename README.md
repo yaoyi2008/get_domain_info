@@ -1,5 +1,5 @@
 # get_domain_info
-用于批量获取域名相关信息，IP地址、网站标题、http状态码、http跳转历史、最终着陆页
+用于批量获取域名相关信息，IP地址、网站标题、连接状态、http状态码、http跳转历史、最终着陆页
 
 # 参数解释
 <pre><code>
@@ -15,3 +15,9 @@ optional arguments:
   --timeout TIMEOUT  超时时间，默认5秒  
   --threads THREADS  线程数，默认10线程  `
 </code></pre>
+# 功能说明
+* 当前支持将域名存放在文本中，每行一个
+* 支持结果方式：`命令提示符窗口中实时显示`、`excel`、`MongoDB`
+
+# 已知问题
+* 还不能中途使用Ctrl+C结束多线程
