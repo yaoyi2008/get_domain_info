@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Created by: yaoyi2008
 
 import os
 import sys
@@ -11,7 +12,7 @@ import time
 import argparse
 from bs4 import BeautifulSoup
 
-
+# 更改系统编码为utf-8，方式乱码
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
@@ -114,8 +115,9 @@ def get_web_info(domain, protocol, timeout):
         )
         lock.release()  # 对输出的动作，释放锁
 
-        # 向MongoDB插入数据
-        test_info_tab.insert_one(web_info)
+        '''
+        test_info_tab.insert_one(web_info) # 向MongoDB插入数据
+        '''
 
     max_threads.release()  # 线程数控制，释放锁
 
@@ -154,10 +156,12 @@ if __name__ == '__main__':
         start_time = time.time()
         print('>>>>> Start time: {} <<<<<'.format(time.strftime('%Y-%m-%d %X', time.localtime())))
 
-        # 打开数据库
+        '''
+        # 打开MongoDB数据库，并创建数据库和表
         client = pymongo.MongoClient('localhost', 27017)
         testdb = client['testdb']
         test_info_tab = testdb['test_info_tab']
+        '''
 
         # 创建excel表格
         wb = Workbook()
