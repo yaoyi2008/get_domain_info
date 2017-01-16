@@ -15,9 +15,10 @@ optional arguments:
   --timeout TIMEOUT  超时时间，默认5秒  
   --threads THREADS  线程数，默认10线程  `
 </code></pre>
+
 # 功能说明
 * 当前支持将域名存放在文本中，每行一个
-* 支持结果方式：`命令提示符窗口中实时显示`、`excel`、`MongoDB`
+* 支持结果方式：`命令提示符窗口中实时显示（默认输出方式）`、`excel（需带-o参数及值）`、`MongoDB（需取消代码中的相关注释）`
 
 # 已知问题
 * 还不能中途使用Ctrl+C结束多线程
