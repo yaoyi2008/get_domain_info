@@ -18,6 +18,7 @@ sys.setdefaultencoding("utf-8")
 # 关闭https证书警告
 from openpyxl import Workbook
 
+# 关闭requests警告
 requests.packages.urllib3.disable_warnings()
 
 
@@ -114,7 +115,7 @@ def get_web_info(domain, protocol, timeout):
         lock.release()  # 对输出的动作，释放锁
 
         # 向MongoDB插入数据
-        fyjf_info_tab.insert_one(web_info)
+        test_info_tab.insert_one(web_info)
 
     max_threads.release()  # 线程数控制，释放锁
 
@@ -156,7 +157,7 @@ if __name__ == '__main__':
         # 打开数据库
         client = pymongo.MongoClient('localhost', 27017)
         testdb = client['testdb']
-        fyjf_info_tab = testdb['fyjf_info_tab']
+        test_info_tab = testdb['test_info_tab']
 
         # 创建excel表格
         wb = Workbook()
