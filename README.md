@@ -2,9 +2,9 @@
 用于批量获取域名相关信息，IP地址、网站标题、http状态码、http跳转历史、最终着陆页
 
 # 参数解释
-`usage: client.py [-h] [-v] [-p {http,https}] [-f DOMAIN_FILE] [-o OUTPUT_FILE] [--timeout TIMEOUT] [--threads THREADS]
+> usage: client.py [-h] [-v] [-p {http,https}] [-f DOMAIN_FILE] [-o OUTPUT_FILE] [--timeout TIMEOUT] [--threads THREADS]
 
-optional arguments:
+> optional arguments:
   -h, --help         show this help message and exit  
   -v, --version      show program's version number and exit  
   -p {http,https}    http/https，默认http  
