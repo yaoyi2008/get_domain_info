@@ -193,5 +193,5 @@ if __name__ == '__main__':
                 finish_time - start_time))
 
         # # 查看数据库数据
-        # for i in fyjf_info_tab.find():
+        # for i in test_info_tab.find():
         #     print i
